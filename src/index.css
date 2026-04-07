@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  line-height: 1.7;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: 1.5rem 2rem;
+  overflow-x: hidden;
+  background-image: linear-gradient(
+    to bottom right,
+    #1a0b2e,
+    #2d1b4e,
+    #432c7a,
+    #2d1b4e,
+    #5b1b3b,
+    #1f1f74
+  );
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ###################### html elements styling ########################## */
+
+html {
+  /* 1rem = 16px = 100%; */
+  font-size: 62.5%;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  font-size: clamp(1.5rem, 2rem, 3rem);
+  font-weight: 500;
+  color: #fff;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 500;
+}
+
+p {
+  font-size: 1.6rem;
+  font-weight: 530;
+  letter-spacing: 0.15rem;
+  color: #fff;
+}
+
+button {
+  display: inline-block;
+  background-image: linear-gradient(
+    to right bottom,
+    #68dbe9,
+    #32cef8,
+    #12bdff,
+    #4fa8ff,
+    #898eff,
+    #9b7cf7,
+    #af68ea,
+    #c14ed9,
+    #b942da,
+    #b135db,
+    #a726dc,
+    #9d13de
+  );
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+button:hover {
+  transform: scale(1.05);
+  transition: 0.3s ease;
+}
+
+section {
+  padding: 4rem 0;
+}
