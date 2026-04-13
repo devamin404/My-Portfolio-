@@ -1,0 +1,207 @@
+.projectsSection {
+  min-height: 100vh;
+  padding: 4rem 0 4rem 0;
+}
+
+.projectsHeading {
+  font-size: clamp(3rem, 5rem, 6rem);
+  text-align: center;
+  margin-bottom: 2rem;
+  background-image: linear-gradient(
+    to right bottom,
+    #68dbe9,
+    #32cef8,
+    #12bdff,
+    #4fa8ff,
+    #898eff,
+    #9b7cf7,
+    #af68ea,
+    #c14ed9,
+    #b942da,
+    #b135db,
+    #a726dc,
+    #9d13de
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  letter-spacing: 0.4rem;
+}
+
+.projectsDescription {
+  text-align: center;
+  font-size: 1.8rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 8rem;
+  letter-spacing: 0.1rem;
+}
+
+.projectCard {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  position: relative;
+  min-height: 600px;
+  margin: 0 auto;
+}
+
+/* ==================== PROJECT CONTENT (LEFT SIDE) ==================== */
+
+.projectContent {
+  flex-basis: 55%;
+  position: relative;
+  z-index: 2;
+  padding-right: 3rem;
+}
+
+.projectCategory {
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  margin-bottom: 1rem;
+}
+
+.projectTitle {
+  font-size: clamp(2.5rem, 4rem, 5rem);
+  font-weight: 700;
+  margin-bottom: 2rem;
+  letter-spacing: 0.1rem;
+}
+
+.projectDescription {
+  background: rgba(55, 1, 69, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(30px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 4rem;
+  margin-top: 2rem;
+  margin-right: -6rem;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: all 0.15s ease-out;
+  position: relative;
+  z-index: 1;
+}
+
+.projectDescription p {
+  font-size: 1.6rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+}
+
+.projectDescription:hover {
+  transform: scale(1.05);
+  background: rgba(55, 1, 69, 0.15);
+  border-color: rgba(110, 244, 246, 0.2);
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(110, 244, 246, 0.15),
+    inset 0 2px 0 rgba(255, 255, 255, 0.15);
+}
+
+.projectLinks {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.socialIcon {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 2.4rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.socialIcon i {
+  font-size: 2.4rem;
+  transition: all 0.3s ease;
+}
+
+.socialIcon:hover {
+  background: rgba(110, 244, 246, 0.15);
+  border-color: rgba(110, 244, 246, 0.4);
+  color: rgb(110, 244, 246);
+  transform: translateY(-5px) scale(1.1);
+  box-shadow:
+    0 10px 30px rgba(110, 244, 246, 0.3),
+    0 0 20px rgba(110, 244, 246, 0.2);
+}
+
+/* ==================== PROJECT IMAGE (RIGHT SIDE) ==================== */
+
+.projectImageWrapper {
+  flex-basis: 45%;
+  position: relative;
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.projectImageWrapper::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 105%;
+  height: 105%;
+  background-image: linear-gradient(
+    to right bottom,
+    #de48cd,
+    #b142b3,
+    #873a96,
+    #613078,
+    #402459,
+    #3c2159,
+    #381f59,
+    #331c59,
+    #48217a,
+    #61239c,
+    #7d20bd,
+    #9d13de
+  );
+  border-radius: 20px;
+  z-index: -1;
+  opacity: 0.7;
+}
+
+.projectImage {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 16px;
+  box-shadow:
+    0 10px 40px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(110, 244, 246, 0.2);
+  border: 1px solid rgba(110, 244, 246, 0.2);
+  transform: translateX(10px) translateY(17px);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.projectImage:hover {
+  transform: translateX(10px) translateY(17px) scale(1.05);
+  box-shadow:
+    0 15px 50px rgba(0, 0, 0, 0.5),
+    0 0 30px rgba(110, 244, 246, 0.3);
+}

@@ -10,18 +10,21 @@
   padding: 0;
   margin: 0;
   font-family: "Inter", sans-serif;
+  line-height: 1.7;
 }
 
 body {
   min-height: 100vh;
   min-height: 100dvh;
-  padding: 1.5rem;
+  padding: 1.5rem 2rem;
+  overflow-x: hidden;
   background-image: linear-gradient(
     to bottom right,
     #1a0b2e,
     #2d1b4e,
-    #2a1b4e,
-    #26085c,
+    #432c7a,
+    #2d1b4e,
+    #5b1b3b,
     #1f1f74
   );
 }
@@ -45,7 +48,7 @@ img {
 
 a {
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: clamp(1.5rem, 2rem, 3rem);
   font-weight: 500;
   color: #fff;
 }
@@ -57,9 +60,9 @@ h3 {
 }
 
 p {
-  font-size: 1.2rem;
-  font-weight: 500;
-  letter-spacing: 0.1rem;
+  font-size: 1.6rem;
+  font-weight: 530;
+  letter-spacing: 0.15rem;
   color: #fff;
 }
 
@@ -93,16 +96,15 @@ button:hover {
 /* ############## utillity classes ################## */
 
 .container {
-  width: min(90%, 1500px);
+  width: min(90%, 1200px);
   margin: 0 auto;
-  padding: 1rem 0;
+  padding: clamp(1rem, 1.5rem, 3rem);
 }
 
 .btn1 {
-  font-size: 1.2rem;
   padding: 0.7rem 1.5rem;
-  margin-top: 2.5rem;
-  border-radius: 20px;
+  margin-top: 3rem;
+  border-radius: 12rem;
   border: none;
 }
 
@@ -112,19 +114,23 @@ button:hover {
 }
 
 .lgHeading {
-  font-size: 4.9rem;
-  letter-spacing: 0.3rem;
-  font-weight: bold;
+  font-size: clamp(3rem, 5rem, 6rem);
+  font-weight: 700;
+}
+
+.mainHeading {
+  font-size: clamp(3rem, 7rem, 8rem);
+  letter-spacing: 0.5rem;
+  font-weight: 700;
 }
 
 .mdHeading {
-  font-size: 2.5rem;
-  letter-spacing: 0.1rem;
-  font-weight: 800;
+  font-size: clamp(3rem, 4rem, 5rem);
+  font-weight: 700;
 }
 
 .smlHeading {
-  font-size: 2rem;
+  font-size: 3rem;
 }
 
 .textBlue {

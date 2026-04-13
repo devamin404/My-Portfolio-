@@ -13,7 +13,7 @@ function Header() {
 
       <section className={`container ${styles.hero}`}>
         <div className={styles.heroContent}>
-          <h1 className="lgHeading">Hi! I'm Amin</h1>
+          <h1 className="mainHeading">Hi! I'm Amin</h1>
           <h2 className="mdHeading">Front End Developer</h2>
 
           <p>

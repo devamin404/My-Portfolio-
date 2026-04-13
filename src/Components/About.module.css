@@ -1,0 +1,81 @@
+.aboutSection {
+  min-height: 100vh;
+  padding: 8rem 0 4rem 0;
+}
+
+.container {
+  width: min(90%, 1200px);
+  margin: 0 auto;
+}
+
+.aboutHeading {
+  text-align: center;
+  margin-bottom: 3rem;
+  background-image: linear-gradient(
+    to right bottom,
+    #68dbe9,
+    #32cef8,
+    #12bdff,
+    #4fa8ff,
+    #898eff,
+    #9b7cf7,
+    #af68ea,
+    #c14ed9,
+    #b942da,
+    #b135db,
+    #a726dc,
+    #9d13de
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+}
+
+.aboutText {
+  max-width: 800px;
+  margin: 0 auto 5rem;
+  text-align: center;
+  font-size: 1.6rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.skillsIcons {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.skillsIconsSecond {
+  margin-bottom: 6rem;
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.skillIcon {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.skillIcon:hover {
+  transform: translateY(-10px) scale(1.1);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.skillIcon i {
+  font-size: 3.5rem;
+}

@@ -1,6 +1,6 @@
 header {
-  min-height: 95vh;
-  min-height: 95dvh;
+  min-height: 90vh;
+  min-height: 90dvh;
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(40px);
   -webkit-backdrop-filter: blur(20px);
@@ -8,15 +8,13 @@ header {
   border-radius: 20px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   margin-top: 2rem;
-  margin-bottom: 1.5rem;
-  overflow: hidden;
 }
 
 header nav {
   display: flex;
   justify-content: space-around;
   width: 100%;
-  gap: 8rem;
+  gap: 4rem;
 }
 
 header nav a {
@@ -53,8 +51,6 @@ header nav a:hover::after {
   justify-content: space-between;
   margin-top: 3rem;
   gap: 3rem;
-  position: relative;
-  z-index: 2;
 }
 
 .hero .heroContent {
@@ -90,7 +86,7 @@ header nav a:hover::after {
 }
 
 .hero .heroContent p {
-  max-width: 50ch;
+  width: min(90%, 550px);
   line-height: 1.7;
   margin-top: 1rem;
 }

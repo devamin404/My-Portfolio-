@@ -1,0 +1,209 @@
+.contactSection {
+  min-height: 100vh;
+  padding: 8rem 0;
+}
+
+.contactHeading {
+  font-size: clamp(3rem, 5rem, 6rem);
+  text-align: center;
+  margin-bottom: 2rem;
+  background-image: linear-gradient(
+    to right bottom,
+    #68dbe9,
+    #32cef8,
+    #12bdff,
+    #4fa8ff,
+    #898eff,
+    #9b7cf7,
+    #af68ea,
+    #c14ed9,
+    #b942da,
+    #b135db,
+    #a726dc,
+    #9d13de
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  letter-spacing: 0.3rem;
+}
+
+.contactWrapper {
+  display: flex;
+  gap: 4rem;
+  align-items: flex-start;
+  margin-top: 6rem;
+  max-width: 1200px;
+}
+
+/* ==================== LEFT SIDE CONTAINER ==================== */
+
+.contactInfo {
+  flex-basis: 45%;
+  padding-right: 2rem;
+}
+
+.infoHeading {
+  font-size: clamp(2.5rem, 3.5rem, 4rem);
+  color: rgb(110, 244, 246);
+  margin-bottom: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+}
+
+.infoDescription {
+  font-size: 1.6rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 4rem;
+}
+
+.contactDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  margin-bottom: 4rem;
+}
+
+.detailItem {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.iconBox {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(
+    to right bottom,
+    #68dbe9,
+    #32cef8,
+    #12bdff,
+    #4fa8ff,
+    #898eff,
+    #9b7cf7,
+    #af68ea,
+    #c14ed9,
+    #b942da,
+    #b135db,
+    #a726dc,
+    #9d13de
+  );
+  border-radius: 12px;
+}
+
+.iconBox i {
+  font-size: 2.2rem;
+  color: #fff;
+}
+
+.detailText a,
+.detailText span {
+  font-size: 1.6rem;
+  letter-spacing: 0.1rem;
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.detailText a:hover {
+  color: rgb(35, 200, 200);
+}
+
+/* ==================== RIGHT SIDE CONTAINER ==================== */
+
+.contactFormContainer {
+  flex-basis: 55%;
+}
+
+.contactForm {
+  background: rgba(55, 1, 69, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 4rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.formGroup {
+  margin-bottom: 2.5rem;
+}
+
+.formGroup label {
+  display: block;
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.05rem;
+}
+
+.formGroup input,
+.formGroup textarea {
+  width: 100%;
+  padding: 1.5rem 2rem;
+  background: rgba(30, 10, 50, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: #fff;
+  font-size: 1.6rem;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.formGroup input::placeholder,
+.formGroup textarea::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus {
+  background: rgba(30, 10, 50, 0.7);
+  border-color: rgba(110, 244, 246, 0.5);
+  box-shadow: 0 0 0 3px rgba(110, 244, 246, 0.1);
+}
+
+.formGroup textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.btnSubmit {
+  width: 100%;
+  padding: 1.5rem 3rem;
+  background-image: linear-gradient(
+    to right,
+    #68dbe9,
+    #32cef8,
+    #12bdff,
+    #4fa8ff,
+    #898eff
+  );
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.btnSubmit:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(104, 219, 233, 0.4);
+}
+
+.btnSubmit i {
+  font-size: 1.8rem;
+}
