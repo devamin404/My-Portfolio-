@@ -1,6 +1,6 @@
 .contactSection {
-  min-height: 100vh;
-  padding: 8rem 0;
+  min-height: 95vh;
+  padding: 4rem 0 1rem 0;
 }
 
 .contactHeading {
@@ -34,7 +34,6 @@
   gap: 4rem;
   align-items: flex-start;
   margin-top: 6rem;
-  max-width: 1200px;
 }
 
 /* ==================== LEFT SIDE CONTAINER ==================== */
@@ -75,6 +74,7 @@
 .iconBox {
   width: 55px;
   height: 55px;
+  padding: 0.4rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -93,12 +93,7 @@
     #a726dc,
     #9d13de
   );
-  border-radius: 12px;
-}
-
-.iconBox i {
-  font-size: 2.2rem;
-  color: #fff;
+  border-radius: 50px;
 }
 
 .detailText a,
@@ -109,6 +104,11 @@
   font-weight: 500;
   text-decoration: none;
   transition: color 0.3s ease;
+}
+
+.detailItem .iconBox img {
+  width: 35px;
+  filter: invert(1);
 }
 
 .detailText a:hover {
@@ -176,7 +176,7 @@
 
 .btnSubmit {
   width: 100%;
-  padding: 1.5rem 3rem;
+  padding: 1.2rem 2rem;
   background-image: linear-gradient(
     to right,
     #68dbe9,
@@ -188,7 +188,7 @@
   border: none;
   border-radius: 12px;
   color: #fff;
-  font-size: 1.6rem;
+  font-size: 2rem;
   font-weight: 600;
   cursor: pointer;
   display: flex;
@@ -202,8 +202,4 @@
 .btnSubmit:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 30px rgba(104, 219, 233, 0.4);
-}
-
-.btnSubmit i {
-  font-size: 1.8rem;
 }

@@ -18,15 +18,24 @@ body {
   min-height: 100dvh;
   padding: 1.5rem 2rem;
   overflow-x: hidden;
-  background-image: linear-gradient(
-    to bottom right,
-    #1a0b2e,
-    #2d1b4e,
-    #432c7a,
-    #2d1b4e,
-    #5b1b3b,
-    #1f1f74
-  );
+  background-color: #09001d;
+  background-image:
+    radial-gradient(
+      circle at 16% 12%,
+      rgba(120, 78, 255, 0.34),
+      transparent 42%
+    ),
+    radial-gradient(
+      circle at 78% 22%,
+      rgba(73, 176, 255, 0.24),
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 50% 74%,
+      rgba(192, 76, 255, 0.2),
+      transparent 48%
+    ),
+    linear-gradient(145deg, #060014 0%, #130235 32%, #19074a 58%, #101b53 100%);
 }
 
 html {

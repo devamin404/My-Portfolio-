@@ -1,5 +1,5 @@
 import styles from "./Header.module.css";
-import myPic from "../Assets/img/Amin 3.png";
+import myPic from "../Assets/img/My Portfoio Picture.png";
 
 function Header() {
   return (

@@ -156,19 +156,19 @@
   width: 105%;
   height: 105%;
   background-image: linear-gradient(
-    to right bottom,
-    #de48cd,
-    #b142b3,
-    #873a96,
-    #613078,
-    #402459,
-    #3c2159,
-    #381f59,
-    #331c59,
-    #48217a,
-    #61239c,
-    #7d20bd,
-    #9d13de
+    to right top,
+    #2000c8,
+    #4200c3,
+    #5701be,
+    #6607b9,
+    #720fb5,
+    #7e1bb9,
+    #8a25bd,
+    #952fc1,
+    #a53dcf,
+    #b64bdd,
+    #c658eb,
+    #d766f9
   );
   border-radius: 20px;
   z-index: -1;
@@ -177,12 +177,13 @@
 
 .projectImage {
   max-width: 450px;
+  aspect-ratio: 4/3;
   border-radius: 16px;
   box-shadow:
     0 10px 40px rgba(0, 0, 0, 0.4),
     0 0 20px rgba(110, 244, 246, 0.2);
   border: 1px solid rgba(110, 244, 246, 0.2);
-  transform: translateX(10px) translateY(17px);
+  transform: translateX(12px) translateY(10px);
   cursor: pointer;
   transition: all 0.3s ease;
 }

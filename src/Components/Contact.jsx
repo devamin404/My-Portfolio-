@@ -1,4 +1,8 @@
 import styles from "./Contact.module.css";
+import briefcase from "../Assets/img/briefcase.png";
+import email from "../Assets/img/email.png";
+import location from "../Assets/img/location.png";
+import { SiMinutemailer } from "react-icons/si";
 
 function Contact() {
   return (
@@ -18,7 +22,7 @@ function Contact() {
           <div className={styles.contactDetails}>
             <div className={styles.detailItem}>
               <div className={styles.iconBox}>
-                <i className="fas fa-envelope"></i>
+                <img src={email} alt="Email for clients" />
               </div>
               <div className={styles.detailText}>
                 <a href="mailto:devamin404@gmail.com">devamin404@gmail.com</a>
@@ -27,7 +31,7 @@ function Contact() {
 
             <div className={styles.detailItem}>
               <div className={styles.iconBox}>
-                <i className="fas fa-map-marker-alt"></i>
+                <img src={location} alt="" />
               </div>
               <div className={styles.detailText}>
                 <span>Lahore, Punjab, Pakistan</span>
@@ -36,7 +40,7 @@ function Contact() {
 
             <div className={styles.detailItem}>
               <div className={styles.iconBox}>
-                <i className="fas fa-clock"></i>
+                <img src={briefcase} alt="" />
               </div>
               <div className={styles.detailText}>
                 <span>Open to Opportunities</span>
@@ -81,8 +85,8 @@ function Contact() {
             </div>
 
             <button type="submit" className={styles.btnSubmit}>
+              <SiMinutemailer size={"30px"} />
               <span>Send Message</span>
-              <i className="fas fa-paper-plane"></i>
             </button>
           </form>
         </div>
