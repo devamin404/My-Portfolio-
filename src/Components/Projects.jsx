@@ -1,5 +1,6 @@
 import styles from "./Projects.module.css";
 import calculatorProject from "../Assets/img/Calculator.png";
+
 function Projects() {
   return (
     <section className={`${styles.projectsSection} container`} id="work">

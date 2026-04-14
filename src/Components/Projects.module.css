@@ -1,5 +1,5 @@
 .projectsSection {
-  min-height: 100vh;
+  min-height: 95vh;
   padding: 4rem 0 4rem 0;
 }
 
@@ -39,12 +39,10 @@
 
 .projectCard {
   max-width: 1200px;
-  width: 100%;
+  width: 90%;
+  min-height: 600px;
   display: flex;
   align-items: center;
-  gap: 0;
-  position: relative;
-  min-height: 600px;
   margin: 0 auto;
 }
 
@@ -52,8 +50,7 @@
 
 .projectContent {
   flex-basis: 55%;
-  position: relative;
-  z-index: 2;
+  z-index: 1;
   padding-right: 3rem;
 }
 
@@ -75,10 +72,10 @@
 .projectDescription {
   background: rgba(55, 1, 69, 0.1);
   backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 20px;
-  padding: 4rem;
+  padding: 3rem;
   margin-top: 2rem;
   margin-right: -6rem;
   box-shadow:
@@ -86,8 +83,11 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
   cursor: pointer;
   transition: all 0.15s ease-out;
-  position: relative;
-  z-index: 1;
+}
+
+.projectDescription:hover {
+  transform: scale(1.05);
+  background: rgba(55, 1, 69, 0.15);
 }
 
 .projectDescription p {
@@ -95,16 +95,6 @@
   line-height: 1.8;
   color: rgba(255, 255, 255, 0.85);
   margin: 0;
-}
-
-.projectDescription:hover {
-  transform: scale(1.05);
-  background: rgba(55, 1, 69, 0.15);
-  border-color: rgba(110, 244, 246, 0.2);
-  box-shadow:
-    0 12px 40px rgba(0, 0, 0, 0.4),
-    0 0 20px rgba(110, 244, 246, 0.15),
-    inset 0 2px 0 rgba(255, 255, 255, 0.15);
 }
 
 .projectLinks {
@@ -134,7 +124,6 @@
 
 .socialIcon i {
   font-size: 2.4rem;
-  transition: all 0.3s ease;
 }
 
 .socialIcon:hover {
@@ -187,7 +176,6 @@
 }
 
 .projectImage {
-  width: 100%;
   max-width: 450px;
   border-radius: 16px;
   box-shadow:
