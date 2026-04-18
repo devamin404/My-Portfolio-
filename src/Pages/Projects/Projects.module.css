@@ -130,7 +130,6 @@
   background: rgba(110, 244, 246, 0.15);
   border-color: rgba(110, 244, 246, 0.4);
   color: rgb(110, 244, 246);
-  transform: translateY(-5px) scale(1.1);
   box-shadow:
     0 10px 30px rgba(110, 244, 246, 0.3),
     0 0 20px rgba(110, 244, 246, 0.2);
