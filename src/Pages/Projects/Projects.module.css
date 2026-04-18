@@ -1,6 +1,6 @@
 .projectsSection {
   min-height: 95vh;
-  padding: 4rem 0 4rem 0;
+  padding: 4rem 0 1rem 0;
 }
 
 .projectsHeading {
@@ -33,7 +33,7 @@
   text-align: center;
   font-size: 1.8rem;
   color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 8rem;
+  margin-bottom: 1rem;
   letter-spacing: 0.1rem;
 }
 

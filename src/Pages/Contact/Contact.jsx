@@ -1,7 +1,7 @@
 import styles from "./Contact.module.css";
-import briefcase from "../Assets/img/briefcase.png";
-import email from "../Assets/img/email.png";
-import location from "../Assets/img/location.png";
+import briefcase from "../../Assets/Icons/briefcase.png";
+import email from "../../Assets/Icons/email.png";
+import location from "../../Assets/Icons/location.png";
 import { SiMinutemailer } from "react-icons/si";
 
 function Contact() {

@@ -1,6 +1,6 @@
 .aboutSection {
-  min-height: 100vh;
-  padding: 8rem 0 4rem 0;
+  min-height: 70vh;
+  padding: 4rem 0 1rem 0;
 }
 
 .container {
@@ -51,7 +51,7 @@
 }
 
 .skillsIconsSecond {
-  margin-bottom: 6rem;
+  margin-bottom: 1rem;
   display: flex;
   justify-content: center;
   gap: 2.5rem;

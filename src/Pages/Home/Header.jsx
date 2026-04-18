@@ -1,5 +1,5 @@
 import styles from "./Header.module.css";
-import myPic from "../Assets/img/My Portfoio Picture.png";
+import myPic from "../../Assets/Images/My Portfoio Picture.png";
 
 function Header() {
   return (
@@ -7,7 +7,7 @@ function Header() {
       <nav className="container">
         <a href="#home">Home</a>
         <a href="#about">About</a>
-        <a href="#work">Work</a>
+        <a href="#work">Projects</a>
         <a href="#contact">Contact</a>
       </nav>
 

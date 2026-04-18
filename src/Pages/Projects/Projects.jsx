@@ -1,5 +1,5 @@
 import styles from "./Projects.module.css";
-import todoApplicationPicture from "../Assets/img/Todo App.avif";
+import todoApplicationPicture from "../../Assets/Images/Todo App.avif";
 
 function Projects() {
   return (
