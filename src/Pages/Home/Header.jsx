@@ -1,18 +1,47 @@
 import styles from "./Header.module.css";
 import myPic from "../../Assets/Images/My Portfoio Picture.png";
+import { anticipate, motion } from "motion/react";
 
 function Header() {
   return (
     <header id="home">
-      <nav className="container">
+      <motion.nav
+        className="container"
+        initial={{
+          opacity: 0,
+          y: 30,
+        }}
+        animate={{
+          opacity: 1,
+          y: 0,
+        }}
+        transition={{
+          duration: 1,
+          ease: "anticipate",
+        }}
+      >
         <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#work">Projects</a>
         <a href="#contact">Contact</a>
-      </nav>
+      </motion.nav>
 
       <section className={`container ${styles.hero}`}>
-        <div className={styles.heroContent}>
+        <motion.div
+          className={styles.heroContent}
+          initial={{
+            x: -30,
+            opacity: 0,
+          }}
+          whileInView={{
+            x: 0,
+            opacity: 1,
+          }}
+          transition={{
+            duration: 1,
+            ease: "anticipate",
+          }}
+        >
           <h1 className="mainHeading">Hi! I'm Amin</h1>
           <h2 className="mdHeading">Front End Developer</h2>
 
@@ -24,11 +53,25 @@ function Header() {
           </p>
 
           <button className="btn1">Let's Connect</button>
-        </div>
+        </motion.div>
 
-        <div className={styles.heroImg}>
+        <motion.div
+          className={styles.heroImg}
+          initial={{
+            x: 30,
+            opacity: 0,
+          }}
+          whileInView={{
+            x: 0,
+            opacity: 1,
+          }}
+          transition={{
+            duration: 1,
+            ease: "anticipate",
+          }}
+        >
           <img src={myPic} alt="My Picture" className="myImg" />
-        </div>
+        </motion.div>
       </section>
     </header>
   );
