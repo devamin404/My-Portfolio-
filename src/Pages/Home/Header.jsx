@@ -1,6 +1,6 @@
 import styles from "./Header.module.css";
 import myPic from "../../Assets/Images/My Portfoio Picture.png";
-import { anticipate, motion } from "motion/react";
+import { motion } from "motion/react";
 
 function Header() {
   return (

@@ -1,4 +1,5 @@
 import styles from "./About.module.css";
+import { motion } from "motion/react";
 
 function About() {
   const primaryIcons = [
@@ -21,7 +22,23 @@ function About() {
   ];
 
   return (
-    <section className={styles.aboutSection} id="about">
+    <motion.section
+      className={styles.aboutSection}
+      id="about"
+      initial={{
+        opacity: 0,
+        y: -40,
+      }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+      }}
+      transition={{
+        duration: 1,
+        ease: "anticipate",
+      }}
+      viewport={{ once: true, amount: 0.5 }}
+    >
       <div className={styles.container}>
         <h2 className={`${styles.aboutHeading} lgHeading`}>About</h2>
 
@@ -49,7 +66,7 @@ function About() {
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 
