@@ -141,7 +141,7 @@ function Projects() {
               whileHover={{
                 scale: 1.15,
                 y: -10,
-                roate: -10,
+                rotate: -10,
                 transition: { duration: 0.1 },
               }}
               whileTap={{ scale: 1.15, transition: { duration: 0.1 } }}
@@ -159,7 +159,7 @@ function Projects() {
               whileHover={{
                 scale: 1.15,
                 y: -10,
-                roate: -10,
+                rotate: -10,
                 transition: { duration: 0.1 },
               }}
               whileTap={{ scale: 1.15, transition: { duration: 0.1 } }}
@@ -177,7 +177,7 @@ function Projects() {
               whileHover={{
                 scale: 1.15,
                 y: -10,
-                roate: -10,
+                rotate: -10,
                 transition: { duration: 0.1 },
               }}
               whileTap={{ scale: 1.15, transition: { duration: 0.1 } }}
