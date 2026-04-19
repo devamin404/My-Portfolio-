@@ -105,8 +105,16 @@ function About() {
               key={iconClass}
               className={styles.skillIcon}
               variants={aboutLinksVariants}
+              whileHover={{
+                scale: 1.07,
+                y: -15,
+                transition: {
+                  duration: 0.08,
+                  ease: "easeOut",
+                },
+              }}
             >
-              <i className={iconClass}></i>
+              <motion.i className={iconClass}></motion.i>
             </motion.div>
           ))}
         </div>
@@ -117,6 +125,14 @@ function About() {
               key={iconClass}
               className={styles.skillIcon}
               variants={aboutLinksVariants}
+              whileHover={{
+                scale: 1.07,
+                y: -15,
+                transition: {
+                  duration: 0.08,
+                  ease: "easeOut",
+                },
+              }}
             >
               <i className={iconClass}></i>
             </motion.div>
