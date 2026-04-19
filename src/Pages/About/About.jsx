@@ -2,6 +2,56 @@ import styles from "./About.module.css";
 import { motion } from "motion/react";
 
 function About() {
+  const aboutSectionVariants = {
+    hidden: { opacity: 0, y: -40 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+        staggerChildren: 0.1,
+        delayChildren: 0.08,
+      },
+    },
+  };
+
+  const aboutLinksVariants = {
+    hidden: { opacity: 0, y: 20 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.25,
+        ease: "aniticpated",
+      },
+    },
+  };
+
+  const aboutHeadingVariants = {
+    hidden: { opacity: 0, y: 20 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "aniticipated",
+      },
+    },
+  };
+
+  const aboutDescriptionVariants = {
+    hidden: { opacity: 0, y: 20 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.2,
+        ease: "aniticipated",
+      },
+    },
+  };
+
   const primaryIcons = [
     "devicon-figma-plain colored",
     "devicon-react-original colored",
@@ -25,44 +75,51 @@ function About() {
     <motion.section
       className={styles.aboutSection}
       id="about"
-      initial={{
-        opacity: 0,
-        y: -40,
-      }}
-      whileInView={{
-        opacity: 1,
-        y: 0,
-      }}
-      transition={{
-        duration: 1,
-        ease: "anticipate",
-      }}
+      variants={aboutSectionVariants}
+      initial="hidden"
+      whileInView="show"
       viewport={{ once: true, amount: 0.5 }}
     >
       <div className={styles.container}>
-        <h2 className={`${styles.aboutHeading} lgHeading`}>About</h2>
+        <motion.h2
+          className={`${styles.aboutHeading} lgHeading`}
+          variants={aboutHeadingVariants}
+        >
+          About
+        </motion.h2>
 
-        <p className={styles.aboutText}>
+        <motion.p
+          className={styles.aboutText}
+          variants={aboutDescriptionVariants}
+        >
           A passionate front-end developer with a focus on creating modern,
           responsive, and user-friendly websites. I build clean, efficient code
           with HTML, CSS, Tailwind CSS, and JavaScript (ES6+), while currently
           mastering React.js. I focus on seamless interactions that align with
           user expectations and deliver smooth digital experiences.
-        </p>
+        </motion.p>
 
         <div className={styles.skillsIcons}>
           {primaryIcons.map((iconClass) => (
-            <div key={iconClass} className={styles.skillIcon}>
+            <motion.div
+              key={iconClass}
+              className={styles.skillIcon}
+              variants={aboutLinksVariants}
+            >
               <i className={iconClass}></i>
-            </div>
+            </motion.div>
           ))}
         </div>
 
         <div className={styles.skillsIconsSecond}>
           {secondaryIcons.map((iconClass) => (
-            <div key={iconClass} className={styles.skillIcon}>
+            <motion.div
+              key={iconClass}
+              className={styles.skillIcon}
+              variants={aboutLinksVariants}
+            >
               <i className={iconClass}></i>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
