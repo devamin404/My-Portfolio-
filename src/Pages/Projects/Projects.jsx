@@ -3,109 +3,184 @@ import todoApplicationPicture from "../../Assets/Images/Todo App.avif";
 import { motion } from "motion/react";
 
 function Projects() {
+  const projectSecVariants = {
+    hidden: { opacity: 0, y: -40 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.35,
+        ease: "easeOut",
+        staggerChildren: 0.1,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const projectHeadingVariants = {
+    hidden: { opacity: 0, y: -20 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.35,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const projectDescriptionVariants = {
+    hidden: { opacity: 0, x: -20 },
+    show: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.35,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const projectImageVariants = {
+    hidden: { opacity: 0, x: 20 },
+    show: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const linkContainerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        duration: 0.3,
+        ease: "easeOut",
+        staggerChildren: 0.1,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const linkItemVariants = {
+    hidden: { opacity: 0, y: -10 },
+    show: {
+      opacity: 1,
+      y: 0,
+    },
+  };
+
   return (
     <motion.section
       className={`${styles.projectsSection} container`}
       id="work"
-      initial={{
-        opacity: 0,
-        y: -40,
-      }}
-      whileInView={{
-        opacity: 1,
-        y: 0,
-      }}
-      transition={{
-        duration: 1,
-        ease: "easeOut",
-        staggerChildren: 0.15,
-        delayChildren: 0.15,
-      }}
+      variants={projectSecVariants}
+      initial="hidden"
+      whileInView="show"
       viewport={{ once: true, amount: 0.4 }}
     >
-      <h1 className={styles.projectsHeading}>Recent Work</h1>
+      <motion.h1
+        className={styles.projectsHeading}
+        variants={projectHeadingVariants}
+      >
+        Recent Work
+      </motion.h1>
 
-      <p className={styles.projectsDescription}>
+      <motion.p
+        className={styles.projectsDescription}
+        variants={projectDescriptionVariants}
+      >
         A collection of projects I have worked upon
-      </p>
+      </motion.p>
 
       <div className={styles.projectCard}>
         <div className={styles.projectContent}>
-          <h3 className={`${styles.projectCategory} textBlue`}>
+          <motion.h3
+            className={`${styles.projectCategory} textBlue`}
+            variants={projectHeadingVariants}
+          >
             Featured Project
-          </h3>
-          <h2 className={`${styles.projectTitle} textWhite`}>Todo App</h2>
+          </motion.h3>
 
-          <div className={styles.projectDescription}>
-            <motion.p
-              initial={{
-                opacity: 0,
-                x: -20,
-              }}
-              whileInView={{
-                opacity: 1,
-                x: 0,
-              }}
-              transition={{
-                duration: 0.3,
-                ease: "easeOut",
-              }}
-              viewport={{ once: true }}
-            >
+          <motion.h2
+            className={`${styles.projectTitle} textWhite`}
+            variants={projectHeadingVariants}
+          >
+            Todo App
+          </motion.h2>
+
+          <motion.div
+            className={styles.projectDescription}
+            variants={projectDescriptionVariants}
+            whileHover={{ scale: 1.05 }}
+          >
+            <p>
               An interactive todo application demonstrating modern React
               development with real-time progress tracking, smart filters, and
               persistent storage. Features include inline editing, keyboard
               shortcuts, toast notifications, and fully responsive design. Built
               with React hooks and CSS Modules for maintainable, scalable code.
-            </motion.p>
-          </div>
+            </p>
+          </motion.div>
 
-          <div className={styles.projectLinks}>
+          <motion.div
+            className={styles.projectLinks}
+            variants={linkContainerVariants}
+          >
             <motion.a
-              whileHover={{
-                scale: 1.15,
-                rotate: -5,
-              }}
-              transition={{
-                duration: 0.1,
-              }}
               href="https://github.com/devamin404/Todo-App.git"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.socialIcon}
               aria-label="View GitHub Repository"
+              variants={linkItemVariants}
+              whileHover={{
+                scale: 1.15,
+                y: -10,
+                roate: -10,
+                transition: { duration: 0.1 },
+              }}
+              whileTap={{ scale: 1.15, transition: { duration: 0.1 } }}
             >
               <i className="devicon-github-original"></i>
             </motion.a>
+
             <motion.a
-              whileHover={{
-                scale: 1.15,
-                rotate: -5,
-              }}
-              transition={{
-                duration: 0.1,
-              }}
               href="https://www.linkedin.com/in/muhammad-amin-989269398"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.socialIcon}
               aria-label="Connect on LinkedIn"
+              variants={linkItemVariants}
+              whileHover={{
+                scale: 1.15,
+                y: -10,
+                roate: -10,
+                transition: { duration: 0.1 },
+              }}
+              whileTap={{ scale: 1.15, transition: { duration: 0.1 } }}
             >
               <i className="devicon-linkedin-plain"></i>
             </motion.a>
+
             <motion.a
-              whileHover={{
-                scale: 1.15,
-                rotate: -5,
-              }}
-              transition={{
-                duration: 0.1,
-              }}
               href="https://todo-app-tau-opal-20.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.socialIcon}
               aria-label="Live Demo of the Project"
+              variants={linkItemVariants}
+              whileHover={{
+                scale: 1.15,
+                y: -10,
+                roate: -10,
+                transition: { duration: 0.1 },
+              }}
+              whileTap={{ scale: 1.15, transition: { duration: 0.1 } }}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -120,24 +195,12 @@ function Projects() {
                 />
               </svg>
             </motion.a>
-          </div>
+          </motion.div>
         </div>
 
         <motion.div
           className={styles.projectImageWrapper}
-          initial={{
-            opacity: 0,
-            x: 20,
-          }}
-          whileInView={{
-            opacity: 1,
-            x: 0,
-          }}
-          transition={{
-            duration: 0.3,
-            ease: "easeOut",
-          }}
-          viewport={{ once: true }}
+          variants={projectImageVariants}
         >
           <img
             src={todoApplicationPicture}

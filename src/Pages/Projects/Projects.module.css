@@ -86,7 +86,6 @@
 }
 
 .projectDescription:hover {
-  transform: scale(1.05);
   background: rgba(55, 1, 69, 0.15);
 }
 
