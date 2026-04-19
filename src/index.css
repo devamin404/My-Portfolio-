@@ -57,7 +57,7 @@ img {
 
 a {
   text-decoration: none;
-  font-size: clamp(1.5rem, 2rem, 3rem);
+  font-size: 2rem;
   font-weight: 500;
   color: #fff;
 }
@@ -107,7 +107,7 @@ button:hover {
 .container {
   width: min(90%, 1200px);
   margin: 0 auto;
-  padding: clamp(1rem, 1.5rem, 3rem);
+  padding: 1rem;
 }
 
 .btn1 {
@@ -122,19 +122,19 @@ button:hover {
   padding: 0.5rem;
 }
 
-.lgHeading {
-  font-size: clamp(3rem, 5rem, 6rem);
-  font-weight: 700;
-}
-
 .mainHeading {
-  font-size: clamp(3rem, 7rem, 8rem);
+  font-size: 7rem;
   letter-spacing: 0.5rem;
   font-weight: 700;
 }
 
+.lgHeading {
+  font-size: 6rem;
+  font-weight: 700;
+}
+
 .mdHeading {
-  font-size: clamp(3rem, 4rem, 5rem);
+  font-size: 4rem;
   font-weight: 700;
 }
 
@@ -148,4 +148,35 @@ button:hover {
 
 .textWhite {
   color: rgb(255, 255, 255);
+}
+
+/* ################## media queries ####################### */
+@media (max-width: 1200px) {
+  .mainHeading {
+    font-size: 6rem;
+  }
+
+  .lgHeading {
+    font-size: 5rem;
+  }
+}
+
+@media (max-width: 1000px) {
+  .mainHeading {
+    font-size: 5.5rem;
+  }
+
+  .lgHeading {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .mainHeading {
+    font-size: 4.5rem;
+  }
+
+  .lgHeading {
+    font-size: 3.5rem;
+  }
 }

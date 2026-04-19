@@ -47,7 +47,8 @@ header nav a:hover::after {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 3rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
   gap: 3rem;
 }
 
@@ -104,4 +105,28 @@ header nav a:hover::after {
 .hero .heroImg img:hover {
   box-shadow: 0 0 20px rgba(110, 244, 246, 0.6);
   transform: scale(1.05);
+}
+
+/* ################## media queries ####################### */
+@media (max-width: 950px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero .heroContent {
+    flex-basis: 50%;
+  }
+
+  .hero .heroContent p {
+    width: 100%;
+  }
+
+  .hero .heroImg {
+    flex-basis: 50%;
+  }
+
+  .hero .heroImg img {
+    max-width: 250px;
+  }
 }
