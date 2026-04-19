@@ -75,6 +75,7 @@ function Contact() {
       variants={contactSecVariants}
       initial="hidden"
       whileInView="show"
+      viewport={{ once: true, amount: 0.4 }}
     >
       <motion.h1
         className={styles.contactHeading}
