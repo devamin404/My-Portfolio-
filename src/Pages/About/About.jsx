@@ -78,7 +78,7 @@ function About() {
       variants={aboutSectionVariants}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true, amount: 0.5 }}
+      viewport={{ once: true, amount: 0.4 }}
     >
       <div className={styles.container}>
         <motion.h2
