@@ -68,14 +68,18 @@ function Project({
 
   return (
     <div className={styles.projectCard}>
-      <div className={styles.projectContent}>
-        <motion.h3
-          className={`${styles.projectCategory} textBlue`}
-          variants={projectHeadingVariants}
-        >
-          Featured Projects
-        </motion.h3>
+      <motion.div
+        className={styles.projectImageWrapper}
+        variants={projectImageVariants}
+      >
+        <img
+          src={image}
+          alt="Todo Application interface"
+          className={styles.projectImage}
+        />
+      </motion.div>
 
+      <div className={styles.projectContent}>
         <motion.h2
           className={`${styles.projectTitle} textWhite`}
           variants={projectHeadingVariants}
@@ -161,17 +165,6 @@ function Project({
           </motion.a>
         </motion.div>
       </div>
-
-      <motion.div
-        className={styles.projectImageWrapper}
-        variants={projectImageVariants}
-      >
-        <img
-          src={image}
-          alt="Todo Application interface"
-          className={styles.projectImage}
-        />
-      </motion.div>
     </div>
   );
 }

@@ -1,6 +1,6 @@
 header {
-  min-height: 80vh;
-  min-height: 80dvh;
+  min-height: 70vh;
+  min-height: 70dvh;
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(40px);
   -webkit-backdrop-filter: blur(40px);
@@ -107,7 +107,8 @@ header nav a:hover::after {
   transform: scale(1.05);
 }
 
-/* ################## media queries ####################### */
+/* ################## Media queries ####################### */
+
 @media (max-width: 950px) {
   .hero {
     flex-direction: column;
@@ -128,5 +129,21 @@ header nav a:hover::after {
 
   .hero .heroImg img {
     max-width: 250px;
+  }
+}
+
+@media (max-width: 590px) {
+  header nav {
+    display: none;
+  }
+
+  .hero .heroImg img {
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 400px) {
+  .hero .heroImg img {
+    max-width: 150px;
   }
 }

@@ -64,6 +64,7 @@ function Projects() {
       >
         A collection of projects I have worked upon
       </motion.p>
+
       {projectsList.map((project) => {
         return <Project {...project} />;
       })}

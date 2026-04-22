@@ -86,12 +86,6 @@ function Contact() {
 
       <div className={styles.contactWrapper}>
         <div className={styles.contactInfo}>
-          <motion.h3
-            className={styles.infoHeading}
-            variants={contactHeadingVariants}
-          >
-            Get In Touch
-          </motion.h3>
           <motion.p
             className={styles.infoDescription}
             variants={contactDescriptionVariants}
@@ -129,7 +123,9 @@ function Contact() {
                 <img src={briefcase} alt="" />
               </div>
               <div className={styles.detailText}>
-                <span>Open to Opportunities</span>
+                <span className={styles.oppurtunityBox}>
+                  Open to Opportunities
+                </span>
               </div>
             </div>
           </motion.div>

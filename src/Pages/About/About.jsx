@@ -55,7 +55,6 @@ function About() {
   const primaryIcons = [
     "devicon-figma-plain colored",
     "devicon-react-original colored",
-    "devicon-cplusplus-plain colored",
     "devicon-nodejs-plain colored",
     "devicon-webpack-plain colored",
     "devicon-javascript-plain colored",
@@ -63,10 +62,7 @@ function About() {
   ];
 
   const secondaryIcons = [
-    "devicon-npm-original-wordmark colored",
     "devicon-github-original",
-    "devicon-illustrator-plain colored",
-    "devicon-atom-original colored",
     "devicon-vscode-plain colored",
     "devicon-git-plain colored",
   ];

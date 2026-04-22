@@ -1,16 +1,17 @@
 .projectCard {
   max-width: 1200px;
   width: 90%;
-  min-height: 600px;
+  min-height: 450px;
   display: flex;
   align-items: center;
+  gap: 2rem;
   margin: 0 auto;
 }
 
 /* ==================== PROJECT CONTENT (LEFT SIDE) ==================== */
 
 .projectContent {
-  flex-basis: 55%;
+  flex-basis: 60%;
   z-index: 1;
   padding-right: 3rem;
 }
@@ -31,6 +32,8 @@
 }
 
 .projectDescription {
+  max-width: 700px;
+  width: 100%;
   background: rgba(55, 1, 69, 0.1);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -38,7 +41,6 @@
   border-radius: 20px;
   padding: 3rem;
   margin-top: 2rem;
-  margin-right: -6rem;
   box-shadow:
     0 8px 32px rgba(0, 0, 0, 0.3),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
@@ -98,7 +100,7 @@
 /* ==================== PROJECT IMAGE (RIGHT SIDE) ==================== */
 
 .projectImageWrapper {
-  flex-basis: 45%;
+  flex-basis: 40%;
   position: relative;
   z-index: 0;
   display: flex;
@@ -106,50 +108,55 @@
   align-items: center;
 }
 
-.projectImageWrapper::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 105%;
-  height: 105%;
-  background-image: linear-gradient(
-    to right top,
-    #2000c8,
-    #4200c3,
-    #5701be,
-    #6607b9,
-    #720fb5,
-    #7e1bb9,
-    #8a25bd,
-    #952fc1,
-    #a53dcf,
-    #b64bdd,
-    #c658eb,
-    #d766f9
-  );
-  border-radius: 20px;
-  z-index: -1;
-  opacity: 0.7;
-}
-
 .projectImage {
-  max-width: 450px;
+  max-width: 350px;
   aspect-ratio: 4/3;
   border-radius: 16px;
   box-shadow:
     0 10px 40px rgba(0, 0, 0, 0.4),
     0 0 20px rgba(110, 244, 246, 0.2);
   border: 1px solid rgba(110, 244, 246, 0.2);
-  transform: translateX(12px) translateY(10px);
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .projectImage:hover {
-  transform: translateX(10px) translateY(17px) scale(1.05);
+  transform: scale(1.05);
   box-shadow:
     0 15px 50px rgba(0, 0, 0, 0.5),
     0 0 30px rgba(110, 244, 246, 0.3);
+}
+
+/* ==================== Media Queries ==================== */
+
+@media (max-width: 1000px) {
+  .projectCard {
+    flex-direction: column;
+    margin-top: 6rem;
+    text-align: center;
+  }
+
+  .projectLinks {
+    justify-content: center;
+  }
+
+  .projectContent {
+    padding: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .projectImage {
+    max-width: 250px;
+  }
+
+  .projectDescription {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .projectDescription p {
+    font-size: 1.3rem;
+  }
 }

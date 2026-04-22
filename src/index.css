@@ -150,7 +150,7 @@ button:hover {
   color: rgb(255, 255, 255);
 }
 
-/* ################## media queries ####################### */
+/* ################## Media queries ####################### */
 @media (max-width: 1200px) {
   .mainHeading {
     font-size: 6rem;
@@ -178,5 +178,67 @@ button:hover {
 
   .lgHeading {
     font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 590px) {
+  p {
+    font-size: 1.3rem;
+  }
+
+  .mainHeading {
+    font-size: 5rem;
+    letter-spacing: 0.2rem;
+  }
+
+  .lgHeading {
+    font-size: 4rem;
+  }
+
+  .mdHeading {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 450px) {
+  p {
+    font-size: 1.15rem;
+  }
+
+  .mainHeading {
+    font-size: 4rem;
+  }
+
+  .lgHeading {
+    font-size: 3rem;
+  }
+
+  .mdHeading {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 400px) {
+  p {
+    font-size: 1.15rem;
+    letter-spacing: 0.1rem;
+  }
+
+  .mainHeading {
+    font-size: 3.5rem;
+  }
+
+  .lgHeading {
+    font-size: 2.8rem;
+  }
+
+  .mdHeading {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 425px) {
+  body {
+    padding: 1.5rem 1rem;
   }
 }
