@@ -3,32 +3,6 @@ import myPic from "../../Assets/Images/My Portfoio Picture.png";
 import { motion } from "motion/react";
 
 function Header() {
-  const navVariants = {
-    hidden: { opacity: 0, y: 24 },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut",
-        staggerChildren: 0.1,
-        delayChildren: 0.2,
-      },
-    },
-  };
-
-  const navLinkVariants = {
-    hidden: { opacity: 0, y: -8 },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.35,
-        ease: "easeOut",
-      },
-    },
-  };
-
   const heroContainerVariants = {
     hidden: { opacity: 0, y: 20 },
     show: {
@@ -70,26 +44,6 @@ function Header() {
 
   return (
     <header id="home">
-      <motion.nav
-        className="container"
-        variants={navVariants}
-        initial="hidden"
-        animate="show"
-      >
-        <motion.a href="#home" variants={navLinkVariants}>
-          Home
-        </motion.a>
-        <motion.a href="#about" variants={navLinkVariants}>
-          About
-        </motion.a>
-        <motion.a href="#work" variants={navLinkVariants}>
-          Projects
-        </motion.a>
-        <motion.a href="#contact" variants={navLinkVariants}>
-          Contact
-        </motion.a>
-      </motion.nav>
-
       <motion.section
         className={`container ${styles.hero}`}
         variants={heroContainerVariants}

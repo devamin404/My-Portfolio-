@@ -10,37 +10,6 @@ header {
   margin-top: 2rem;
 }
 
-header nav {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-}
-
-header nav a {
-  position: relative;
-}
-
-header nav a::after {
-  content: "";
-  position: absolute;
-  width: 0px;
-  height: 3px;
-  left: 0px;
-  bottom: 0px;
-  background-image: linear-gradient(
-    to right top,
-    #58d4e8,
-    #00c2ff,
-    #00a7ff,
-    #697cff,
-    #d112eb
-  );
-  transition: all 0.3s ease-in-out;
-}
-
-header nav a:hover::after {
-  width: 100%;
-}
 /* ################## hero section styling ####################### */
 
 .hero {
