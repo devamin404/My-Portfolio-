@@ -1,11 +1,76 @@
 import styles from "./Contact.module.css";
-import briefcase from "../../Assets/Icons/briefcase.png";
-import email from "../../Assets/Icons/email.png";
-import location from "../../Assets/Icons/location.png";
 import { SiMinutemailer } from "react-icons/si";
+import { briefcase, mail, location } from "../../Data/assets.js";
 import { motion } from "motion/react";
+import emailjs from "@emailjs/browser";
+import { toast } from "react-toastify";
+import { useState } from "react";
 
 function Contact() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [honeyPot, setHoneyPot] = useState("");
+  const [coolDown, setCoolDown] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+
+  function sendEmail(e) {
+    e.preventDefault();
+    if (name.trim().length === 0) {
+      toast.error("Please enter a valid name!");
+      return;
+    }
+
+    if (!email.includes(".")) {
+      toast.error("Enter a valid email");
+      return;
+    }
+
+    if (message.length < 10) {
+      toast.warning("Enter a valid message...");
+    }
+
+    if (honeyPot) {
+      return;
+    }
+
+    if (coolDown) {
+      toast.warning("Please wait for 15 minutes to send message again!");
+      return;
+    }
+
+    if (isLoading) {
+      return;
+    }
+
+    setIsLoading(true);
+
+    emailjs
+      .sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        e.target,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+      )
+      .then(() => {
+        toast.success("Message sent!");
+        setCoolDown(true);
+        setTimeout(() => {
+          setCoolDown(false);
+        }, 900000);
+        setName("");
+        setEmail("");
+        setMessage("");
+      })
+      .catch((err) => {
+        console.log("Full error", err);
+        toast.error("Something went wrong. Please try later!");
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
+  }
+
   const contactSecVariants = {
     hidden: { opacity: 0, y: -40 },
     show: {
@@ -102,7 +167,7 @@ function Contact() {
           >
             <div className={styles.detailItem}>
               <div className={styles.iconBox}>
-                <img src={email} alt="Email for clients" />
+                <img src={mail} alt="Email for clients" />
               </div>
               <div className={styles.detailText}>
                 <a href="mailto:devamin404@gmail.com">devamin404@gmail.com</a>
@@ -135,15 +200,21 @@ function Contact() {
           className={styles.contactFormContainer}
           variants={contactFormVariants}
         >
-          <form className={styles.contactForm}>
+          <form
+            className={styles.contactForm}
+            onSubmit={sendEmail}
+            method="post"
+          >
             <div className={styles.formGroup}>
               <label htmlFor="name">Name</label>
               <input
                 type="text"
                 id="name"
-                name="name"
+                name="user_name"
                 placeholder="Your Name"
                 required
+                value={name}
+                onChange={(e) => setName(e.target.value)}
               />
             </div>
 
@@ -152,9 +223,11 @@ function Contact() {
               <input
                 type="email"
                 id="email"
-                name="email"
+                name="user_email"
                 placeholder="your.email@example.com"
                 required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
 
@@ -166,12 +239,33 @@ function Contact() {
                 rows="5"
                 placeholder="How can I help you?"
                 required
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
               ></textarea>
             </div>
 
-            <button type="submit" className={styles.btnSubmit}>
+            <input
+              type="text"
+              name="company"
+              autoComplete="off"
+              style={{ display: "none" }}
+              value={honeyPot}
+              onChange={(e) => setHoneyPot(e.target.value)}
+            />
+
+            <button
+              type="submit"
+              className={styles.btnSubmit}
+              disabled={isLoading || coolDown}
+            >
               <SiMinutemailer size={"30px"} />
-              <span>Send Message</span>
+              <span>
+                {isLoading
+                  ? "Sending..."
+                  : coolDown
+                    ? "Wait..."
+                    : "Send Message"}
+              </span>
             </button>
           </form>
         </motion.div>

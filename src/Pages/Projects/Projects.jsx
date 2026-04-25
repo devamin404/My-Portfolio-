@@ -66,7 +66,7 @@ function Projects() {
       </motion.p>
 
       {projectsList.map((project) => {
-        return <Project {...project} />;
+        return <Project {...project} key={project.id} />;
       })}
     </motion.section>
   );

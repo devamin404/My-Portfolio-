@@ -11,7 +11,7 @@ const projectsList = [
     linkedinLink: "https://www.linkedin.com/in/muhammad-amin-989269398",
   },
   {
-    id: 1,
+    id: 2,
     title: "Todo List",
     description:
       "A responsive React Todo app with real-time tracking, smart filters, and persistent storage, featuring inline editing and keyboard shortcuts.",

@@ -65,7 +65,9 @@ function Header() {
             digital solutions that enhance user engagement.
           </p>
 
-          <button className="btn1">Let's Connect</button>
+          <button className="btn1">
+            <a href="#contact">Let's Connect</a>
+          </button>
         </motion.div>
 
         <motion.div className={styles.heroImg} variants={heroImgVariants}>
