@@ -34,11 +34,6 @@ function Contact() {
       return;
     }
 
-    if (coolDown) {
-      toast.warning("Please wait for 15 minutes to send message again!");
-      return;
-    }
-
     if (isLoading) {
       return;
     }
@@ -263,7 +258,7 @@ function Contact() {
                 {isLoading
                   ? "Sending..."
                   : coolDown
-                    ? "Wait..."
+                    ? "Wait for 15 minutes..."
                     : "Send Message"}
               </span>
             </button>
