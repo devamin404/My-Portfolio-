@@ -16,6 +16,7 @@ function Contact() {
     const formattedSeconds = seconds.toString().padStart(2, "0");
     return `${minutes} minutes : ${formattedSeconds} seconds`;
   };
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -47,17 +48,17 @@ function Contact() {
   function sendEmail(e) {
     e.preventDefault();
     if (name.trim().length === 0 || name.trim().length < 3) {
-      toast.error("Please enter a valid name!");
+      toast.error("Your length should be 3 character minimum!");
       return;
     }
 
     if (!email.includes("gmail.com")) {
-      toast.error("Enter a valid email");
+      toast.error("Enter a valid email format! e.g: xyz@gmail.com");
       return;
     }
 
     if (message.length < 10) {
-      toast.warning("Enter a valid message...");
+      toast.warning("Your length should be 10 characters minimum");
       return;
     }
 
