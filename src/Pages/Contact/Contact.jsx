@@ -4,30 +4,61 @@ import { briefcase, mail, location } from "../../Data/assets.js";
 import { motion } from "motion/react";
 import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
-import { useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 function Contact() {
+  const formatTime = (timeLeft) => {
+    if (timeLeft <= 0) return "00:00";
+    const totalSeconds = Math.floor(timeLeft / 1000);
+    const seconds = totalSeconds % 60;
+    const minutes = Math.floor(totalSeconds / 60);
+
+    const formattedSeconds = seconds.toString().padStart(2, "0");
+    return `${minutes} minutes : ${formattedSeconds} seconds`;
+  };
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [honeyPot, setHoneyPot] = useState("");
   const [coolDown, setCoolDown] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [timeLeft, setTimeLeft] = useState(0);
+  const timeIntervalRef = useRef(0);
+
+  useEffect(() => {
+    const coolDownTime = Number(localStorage.getItem("coolDownTime"));
+    if (coolDownTime - Date.now() <= 0) {
+      clearInterval(timeIntervalRef.current);
+      setTimeLeft(0);
+      setCoolDown(false);
+      localStorage.removeItem("coolDownTime");
+    } else {
+      setCoolDown(true);
+      timeIntervalRef.current = setInterval(() => {
+        setTimeLeft(coolDownTime - Date.now());
+      }, 1000);
+    }
+
+    return () => {
+      clearInterval(timeIntervalRef.current);
+    };
+  }, []);
 
   function sendEmail(e) {
     e.preventDefault();
-    if (name.trim().length === 0) {
+    if (name.trim().length === 0 || name.trim().length < 3) {
       toast.error("Please enter a valid name!");
       return;
     }
 
-    if (!email.includes(".")) {
+    if (!email.includes("gmail.com")) {
       toast.error("Enter a valid email");
       return;
     }
 
     if (message.length < 10) {
       toast.warning("Enter a valid message...");
+      return;
     }
 
     if (honeyPot) {
@@ -39,7 +70,6 @@ function Contact() {
     }
 
     setIsLoading(true);
-
     emailjs
       .sendForm(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
@@ -49,17 +79,31 @@ function Contact() {
       )
       .then(() => {
         toast.success("Message sent!");
-        setCoolDown(true);
-        setTimeout(() => {
-          setCoolDown(false);
-        }, 900000);
+        const expiryDuration = 0.5 * 60 * 1000;
+        const coolDownTime = Date.now() + expiryDuration;
+        localStorage.setItem("coolDownTime", `${coolDownTime}`);
+        if (timeIntervalRef.current) {
+          clearInterval(timeIntervalRef.current);
+        }
+        timeIntervalRef.current = setInterval(() => {
+          const remainingTime = coolDownTime - Date.now();
+          if (remainingTime <= 0) {
+            clearInterval(timeIntervalRef.current);
+            setTimeLeft(0);
+            setCoolDown(false);
+            localStorage.removeItem("coolDownTime");
+          } else {
+            setCoolDown(true);
+            setTimeLeft(remainingTime);
+          }
+        }, 1000);
         setName("");
         setEmail("");
         setMessage("");
       })
-      .catch((err) => {
-        console.log("Full error", err);
+      .catch(() => {
         toast.error("Something went wrong. Please try later!");
+        return;
       })
       .finally(() => {
         setIsLoading(false);
@@ -258,7 +302,7 @@ function Contact() {
                 {isLoading
                   ? "Sending..."
                   : coolDown
-                    ? "Wait for 15 minutes..."
+                    ? `Wait for ${formatTime(timeLeft)}`
                     : "Send Message"}
               </span>
             </button>
