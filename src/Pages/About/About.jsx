@@ -90,9 +90,9 @@ function About() {
         >
           A passionate front-end developer with a focus on creating modern,
           responsive, and user-friendly websites. I build clean, efficient code
-          with HTML, CSS, Tailwind CSS, and JavaScript (ES6+), while currently
-          mastering React.js. I focus on seamless interactions that align with
-          user expectations and deliver smooth digital experiences.
+          with HTML, Module CSS , JavaScript (ES6+) and React Js. I focus on
+          seamless interactions that align with user expectations and deliver
+          smooth digital experiences.
         </motion.p>
 
         <div className={styles.skillsIcons}>

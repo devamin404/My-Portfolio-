@@ -1,6 +1,8 @@
 import styles from "./Header.module.css";
 import myPic from "../../Assets/Images/My Portfoio Picture.png";
 import { motion } from "motion/react";
+import NameTyping from "../../Components/NameTyping";
+import RoleTyping from "../../Components/RoleTyping";
 
 function Header() {
   const heroContainerVariants = {
@@ -55,8 +57,12 @@ function Header() {
           className={styles.heroContent}
           variants={heroContentVariants}
         >
-          <h1 className="mainHeading">Hi! I'm Amin</h1>
-          <h2 className="mdHeading">Front End Developer</h2>
+          <h1 className="mainHeading">
+            <NameTyping />
+          </h1>
+          <h2 className="mdHeading">
+            <RoleTyping />
+          </h2>
 
           <p>
             A self-driven front-end developer specializing in building
