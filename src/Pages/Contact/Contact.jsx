@@ -14,7 +14,7 @@ function Contact() {
     const minutes = Math.floor(totalSeconds / 60);
 
     const formattedSeconds = seconds.toString().padStart(2, "0");
-    return `${minutes} minutes : ${formattedSeconds} seconds`;
+    return `${minutes} min : ${formattedSeconds} sec`;
   };
 
   const [name, setName] = useState("");
@@ -80,9 +80,11 @@ function Contact() {
       )
       .then(() => {
         toast.success("Message sent!");
-        const expiryDuration = 0.5 * 60 * 1000;
+        const expiryDuration = 15 * 60 * 1000;
         const coolDownTime = Date.now() + expiryDuration;
         localStorage.setItem("coolDownTime", `${coolDownTime}`);
+        setCoolDown(true);
+        setTimeLeft(expiryDuration);
         if (timeIntervalRef.current) {
           clearInterval(timeIntervalRef.current);
         }
@@ -94,7 +96,6 @@ function Contact() {
             setCoolDown(false);
             localStorage.removeItem("coolDownTime");
           } else {
-            setCoolDown(true);
             setTimeLeft(remainingTime);
           }
         }, 1000);
