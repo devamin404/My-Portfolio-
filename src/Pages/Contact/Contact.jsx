@@ -299,8 +299,11 @@ function Contact() {
               className={styles.btnSubmit}
               disabled={isLoading || coolDown}
             >
-              <SiMinutemailer size={"30px"} />
-              <span>
+              <SiMinutemailer
+                size={"30px"}
+                className={coolDown ? styles.mailDisplay : ""}
+              />
+              <span className={styles.mailBtnText}>
                 {isLoading
                   ? "Sending..."
                   : coolDown

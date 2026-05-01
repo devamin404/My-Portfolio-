@@ -196,6 +196,10 @@
   box-shadow: 0 10px 30px rgba(104, 219, 233, 0.4);
 }
 
+.mailDisplay {
+  display: none;
+}
+
 /* ==================== Media Queries ==================== */
 
 @media (max-width: 1000px) {
@@ -226,9 +230,7 @@
   .contactInfo {
     padding: 0;
   }
-}
 
-@media (max-width: 1000px) {
   .contactForm {
     padding: 2rem;
   }
@@ -247,6 +249,16 @@
   .formGroup input::placeholder,
   .formGroup textarea::placeholder {
     font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .mailBtnText {
+    font-size: 1.4rem;
+  }
+
+  .btnSubmit {
+    padding: 1.2rem 1.5rem;
   }
 }
 
