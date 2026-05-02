@@ -88,11 +88,13 @@ function About() {
           className={styles.aboutText}
           variants={aboutDescriptionVariants}
         >
-          A passionate front-end developer with a focus on creating modern,
-          responsive, and user-friendly websites. I build clean, efficient code
-          with HTML, Module CSS , JavaScript (ES6+) and React Js. I focus on
-          seamless interactions that align with user expectations and deliver
-          smooth digital experiences.
+          A passionate front-end developer focused on building modern,
+          responsive, and user-friendly web applications. I write clean and
+          maintainable code using HTML, CSS Modules, Tailwind CSS, JavaScript
+          (ES6+), and React. While I am comfortable with Tailwind CSS, I
+          primarily prefer CSS Modules for better structure, scalability, and
+          maintainability. I aim to create seamless interactions that align with
+          user expectations and deliver smooth digital experiences.
         </motion.p>
 
         <div className={styles.skillsIcons}>
