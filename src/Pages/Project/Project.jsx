@@ -7,6 +7,7 @@ function Project({
   image,
   gitHubLink,
   liveLink,
+  alt,
   linkedinLink,
 }) {
   const projectHeadingVariants = {
@@ -74,7 +75,7 @@ function Project({
       >
         <img
           src={image}
-          alt="Todo Application interface"
+          alt={alt}
           className={styles.projectImage}
         />
       </motion.div>
